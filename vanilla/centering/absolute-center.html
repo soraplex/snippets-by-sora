@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>grid centering</title>
+    <title>absolute centering</title>
   </head>
   <style>
     *,
@@ -14,14 +14,17 @@
       box-sizing: border-box;
     }
 
-    .center-grid {
+    .center-absolute {
       height: 100vh;
-      display: grid;
-      place-items: center;
-      background: #d9f0ff;
+      position: relative;
+      background: #e8f6ff;
     }
 
     .box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       padding: 20px 40px;
       background: rgba(255, 255, 255, 0.25);
       border-radius: 12px;
@@ -29,8 +32,8 @@
   </style>
   <body>
     <main>
-      <section class="center-grid">
-        <p class="box">grid center</p>
+      <section class="center-absolute">
+        <p class="box">Absolute Center</p>
       </section>
     </main>
   </body>
