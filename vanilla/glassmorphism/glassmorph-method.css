@@ -1,0 +1,68 @@
+html {
+  height: 100%;
+  background: url("https://cdn.prod.website-files.com/687e8d1b96312cc631cafec7/68c4e1936d0d551c09587d1a_I7KjYzGZJixEQtDpK5AbacHSWpy000rDX-ztYbxj4ok.jpeg")
+    no-repeat center center fixed;
+  background-size: cover;
+}
+
+body {
+  margin: 0;
+  padding: 40px; /* keeps your original spacing */
+  font-family: Arial, sans-serif;
+
+  display: grid;
+  gap: 40px;
+}
+
+.card {
+  padding: 24px;
+  color: #fff;
+  max-width: 360px;
+}
+
+/* -------------------------
+     METHOD 1
+  --------------------------*/
+.method1 {
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+}
+
+/* METHOD 2 */
+.method2 {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* -------------------------
+     METHOD 3
+  --------------------------*/
+.method2 {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* -------------------------
+     METHOD 4
+  --------------------------*/
+.method4 {
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
