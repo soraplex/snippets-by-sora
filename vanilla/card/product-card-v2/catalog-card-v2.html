@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="catalog-card-v2.css">
+    <title>Card</title>
+  </head>
+  <body>
+    <main>
+      <!-- CARD 1: Price moved to top header, no button below -->
+      <article class="card">
+        <img
+          src="https://img.abercrombie.com/is/image/anf/KIC_123-4222-00226-903_prod1.jpg?policy=product-large"
+          alt="card image"
+          class="card-image"
+        />
+        <div class="card-content">
+          <header class="card-header">
+            <h2 class="card-title">T shirt</h2>
+            <data class="card-price" value="20.00">$20</data>
+          </header>
+          <p class="card-text">this is a card without a button</p>
+        </div>
+      </article>
+
+      <!-- CARD 2: Price completely removed, small button aligned left -->
+      <article class="card">
+        <img
+          src="https://img.abercrombie.com/is/image/anf/KIC_123-4222-00226-903_prod1.jpg?policy=product-large"
+          alt="card image"
+          class="card-image"
+        />
+        <div class="card-content">
+          <header class="card-header">
+            <h2 class="card-title">T shirt</h2>
+          </header>
+          <p class="card-text">this is a card with a button</p>
+          <div class="card-actions align-left">
+            <button class="btn">Buy</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 3: Price completely removed, full-width button below -->
+      <article class="card">
+        <img
+          src="https://img.abercrombie.com/is/image/anf/KIC_123-4222-00226-903_prod1.jpg?policy=product-large"
+          alt="card image"
+          class="card-image"
+        />
+        <div class="card-content">
+          <header class="card-header">
+            <h2 class="card-title">T shirt</h2>
+          </header>
+          <p class="card-text">this is a card with a full width button</p>
+          <div class="card-actions">
+            <button class="btn w-full">Buy</button>
+          </div>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
