@@ -1,0 +1,349 @@
+/* ------------------------------
+   GLOBAL
+------------------------------ */
+body {
+  margin: 0;
+  background: #07090f;
+  color: #ccd6f6;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: #0077aa;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 4rem;
+  padding: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ------------------------------
+   SIDEBAR
+------------------------------ */
+.sidebar {
+  position: sticky;
+  top: 4rem;
+  height: fit-content;
+}
+
+.intro h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.intro h2 {
+  margin-top: 0.5rem;
+  color: #8892b0;
+  font-size: 1.2rem;
+}
+
+.bio {
+  margin: 1.5rem 0;
+  color: #8892b0;
+}
+
+/* NAVIGATION */
+.nav li {
+  margin: 0.4rem 0;
+}
+
+.nav a {
+  display: block;
+  font-weight: 500;
+}
+
+/* SOCIAL LINKS */
+.socials {
+  margin-top: 2rem;
+}
+
+.socials li {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.socials a {
+  color: #8892b0;
+}
+
+/* FOOTER */
+.site-footer {
+  margin-top: 2rem;
+  color: #8892b0;
+}
+
+/* ------------------------------
+   MAIN CONTENT
+------------------------------ */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.section-title {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  color: #0077aa;
+}
+
+/* ABOUT */
+.about-text {
+  color: #8892b0;
+  max-width: 600px;
+}
+
+/* ------------------------------
+   EXPERIENCE
+------------------------------ */
+#experience {
+  margin-top: 2rem;
+}
+
+.exp-container {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+}
+
+/* TABS */
+.exp-tabs {
+  display: flex;
+  flex-direction: column;
+  width: 180px;
+  position: relative;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  padding-right: 20px;
+}
+
+.exp-tabs [role="tab"] {
+  background: none;
+  border: none;
+  color: #8892b0;
+  text-align: left;
+  padding: 12px 0;
+  font-size: 15px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.exp-tabs [role="tab"]:hover {
+  color: #ccd6f6;
+}
+
+.exp-tabs [role="tab"][aria-selected="true"] {
+  color: #0077aa;
+  font-weight: 600;
+}
+
+.divider-highlight {
+  position: absolute;
+  right: -1px;
+  width: 2px;
+  height: 28px;
+  background: #0077aa;
+  transform: translateY(0);
+  transition: transform 0.25s ease;
+}
+
+/* PANELS */
+.exp-panels {
+  flex: 1;
+}
+
+.exp-panel {
+  display: none;
+}
+
+.exp-panel.active {
+  display: block;
+}
+
+.exp-panel header h2 {
+  margin: 0 0 6px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #e6f1ff;
+}
+
+.date {
+  color: #8892b0;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.exp-panel ul {
+  line-height: 1.6;
+  max-width: 60ch;
+}
+
+.exp-panel li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+}
+
+.exp-panel li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #0077aa;
+  font-weight: bold;
+}
+
+/* ------------------------------
+   PROJECTS
+------------------------------ */
+.project-card {
+  padding: 1.8rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  background: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease,
+    backdrop-filter 0.35s ease;
+}
+
+.project-card figure {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin: 0;
+}
+
+.project-thumb {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-thumb {
+  opacity: 1;
+}
+
+.project-info h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #e6f1ff;
+}
+
+.project-info p {
+  margin: 0.6rem 0;
+  color: #8892b0;
+}
+
+.tags {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #0077aa;
+}
+
+/* Glassmorphism Hover */
+.project-card:hover {
+  transform: scale(1.03);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(18px) brightness(1.15);
+  border-color: rgba(255, 255, 255, 0.35);
+
+  box-shadow:
+    0 0 25px rgba(255, 255, 255, 0.15),
+    0 0 60px rgba(255, 255, 255, 0.1),
+    0 0 90px rgba(100, 255, 218, 0.1);
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  background-size: cover;
+  transition: opacity 0.35s ease;
+}
+
+.project-card:hover::before {
+  opacity: 0.25;
+}
+
+/* ------------------------------
+   CASE STUDIES
+------------------------------ */
+.case-study {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.case-study header h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #e6f1ff;
+}
+
+.case-study p {
+  margin: 0.6rem 0;
+  color: #8892b0;
+}
+
+.case-study footer {
+  margin-top: 1rem;
+}
+
+.case-link {
+  color: #0077aa;
+  font-weight: 500;
+}
+
+/* ------------------------------
+   MOBILE
+------------------------------ */
+@media (max-width: 800px) {
+  .layout {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+
+  .sidebar {
+    position: static;
+  }
+
+  .project-card figure {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .project-thumb {
+    width: 100%;
+    height: 160px;
+  }
+
+  .project-info {
+    width: 100%;
+    text-align: left;
+  }
+}

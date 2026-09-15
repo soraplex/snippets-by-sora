@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Name — Portfolio</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <section class="layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <header class="intro">
+          <h1>Name</h1>
+          <h2>Title</h2>
+          <p class="bio">I build accessible, clean, and thoughtful digital experiences.</p>
+        </header>
+
+        <nav class="nav" aria-label="Primary">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#case-studies">Case Studies</a></li>
+          </ul>
+        </nav>
+
+        <nav class="socials" aria-label="Social Links">
+          <ul>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </nav>
+
+        <footer class="site-footer">
+          <p>&copy; 2026 Your Name. All rights reserved.</p>
+        </footer>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="content">
+        <!-- ABOUT -->
+        <section id="about">
+          <h3 class="section-title">About Me</h3>
+          <p class="about-text">
+            Write a short blurb about who you are, what you do, and what drives your work. Keep it warm, human, and
+            focused on your strengths.
+          </p>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience">
+          <h3 class="section-title">Experience</h3>
+
+          <div class="exp-container">
+            <!-- TABS Container -->
+            <nav class="exp-tabs" role="tablist" aria-label="Experience Tabs" id="exp-tabs-list">
+              <div class="divider-highlight"></div>
+              <!-- Dynamic tab buttons will render here -->
+            </nav>
+
+            <!-- PANELS Container -->
+            <div class="exp-panels" id="exp-panels-list">
+              <!-- Dynamic content panels will render here -->
+            </div>
+          </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects">
+          <h3 class="section-title">Projects</h3>
+          <!-- MUST HAVE THIS EXACT ID WRAPPER -->
+          <div id="project-list"></div>
+        </section>
+
+        <section id="case-studies">
+          <h3 class="section-title">Case Studies</h3>
+          <!-- MUST HAVE THIS EXACT ID WRAPPER -->
+          <div id="case-study-list"></div>
+        </section>
+      </main>
+    </section>
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
