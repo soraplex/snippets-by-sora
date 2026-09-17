@@ -65,12 +65,11 @@ li {
   margin-top: 0.25em;
 }
 
-/* Inline Code Highlight (Yellowish/Tan style from screenshot) */
 code {
   padding: 0.2em 0.4em;
   margin: 0;
   font-size: 85%;
-  color: #e3b341; /* Warm golden/yellow text color */
+  color: #e3b341; 
   background-color: rgba(240, 185, 55, 0.1); /* Subtle gold background tint */
   border-radius: 6px;
   font-family:
@@ -83,13 +82,12 @@ code {
     monospace;
 }
 
-/* Directory Tree & Preformatted Code Blocks */
 pre {
   padding: 16px;
   overflow: auto;
   font-size: 85%;
   line-height: 1.45;
-  background-color: #161b22; /* Darker tile color for blocks */
+  background-color: #161b22; 
   border-radius: 6px;
   border: 1px solid #21262d;
 }
@@ -101,11 +99,10 @@ pre code {
   word-break: normal;
   white-space: pre;
   background: transparent;
-  color: #c9d1d9; /* Maintains normal text inside block */
+  color: #c9d1d9; 
   border-radius: 0;
 }
 
-/* Semantic groupings */
 .standards-group {
   margin-bottom: 1.5rem;
 }
@@ -126,16 +123,12 @@ code .highlight {
     monospace;
 }
 
-/* ─── NEW ALIGNMENT FIXES ─── */
-
-/* Removes standard bullet points and margins for your convention cards */
 .convention-list {
   list-style-type: none;
   padding: 0;
   margin: 1rem 0;
 }
 
-/* Individual card styling */
 .convention-item {
   background-color: #161b22;
   border: 1px solid #21262d;
@@ -144,7 +137,6 @@ code .highlight {
   margin-bottom: 16px;
 }
 
-/* Flexbox alignment: Puts Label and Badge side-by-side */
 .item-header {
   display: flex;
   align-items: center;
@@ -156,7 +148,6 @@ code .highlight {
   color: #f0f6fc;
 }
 
-/* Badge block styling matching your color scheme */
 .badge {
   background-color: rgba(56, 139, 253, 0.15);
   color: #58a6ff;
@@ -175,14 +166,12 @@ code .highlight {
   font-size: 0.95rem;
 }
 
-/* Stack the example code blocks cleanly */
 .example-group {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-/* Styles the code boxes to look like miniature terminal outputs */
 .example-box {
   display: inline-block;
   background-color: #0d1117;
