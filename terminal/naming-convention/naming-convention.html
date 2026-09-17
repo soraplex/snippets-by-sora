@@ -7,6 +7,45 @@
   <title>naming structure</title>
 </head>
 <body>
-  
+    <section class="docs-section">
+        <h2>🏗️ Directory Tree</h2>
+        <pre><code>src/
+├── 📁 components/                  # Global, shared UI components
+│   └── 📁 custom-button/
+│       ├── 📄 custom-button.jsx     # The actual component file
+│       ├── 📄 custom-button.test.js # Test file
+│       └── 📄 custom-button.css     # Styling
+├── 📁 features/                    # Domain-driven features (grouped by module)
+│   └── 📁 user-profile/            # Feature Folder
+│       ├── 📄 profile-card.jsx     # Sub-component
+│       ├── 📄 use-profile.js       # Custom Hook
+│       └── 📄 profile-api.js       # API helper
+├── 📁 hooks/                       # Global custom hooks
+│   └── 📄 use-local-storage.js
+└── 📁 views/                       # Entire pages / routes
+    └── 📄 user-dashboard.jsx</code></pre>
+      </section>
+        <section class="docs-section">
+          <h2>🔤 Code Casing Standards</h2>
+          <ul>
+            <li>
+              <strong>Files & Folders:</strong> <code>kebab-case</code> (e.g., <code>user-profile/</code>,
+              <code>profile-card.tsx</code>)
+            </li>
+            <li>
+              <strong>Variables & Functions:</strong> <code>camelCase</code> (e.g., <code>userProfile</code>,
+              <code>fetchData()</code>)
+            </li>
+            <li><strong>Components & Types:</strong> <code>PascalCase</code> (e.g., <code>UserProfileCard</code>)</li>
+            <li><strong>Global Constants:</strong> <code>UPPER_SNAKE</code> (e.g., <code>API_KEY</code>)</li>
+          </ul>
+        </section>
+        <p>1. first make the directory folder by running</p>
+        <pre><code>mkdir <span class="highlight">name_of_repo</span>
+
+ex: mkdir supermarket-data.js
+</code></pre>
+      </section>
+    </main>
 </body>
 </html>
