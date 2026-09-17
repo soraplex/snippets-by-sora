@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Updated path to make sure it reads from your stylesheet directory -->
+    <link rel="stylesheet" href="markdown.css" />
+    <title>creating a repo</title>
+  </head>
+  <body>
+    <!-- Added main container to center the layout perfectly -->
+    <main>
+      <ul class="convention-list">
+        <!-- Step 1 -->
+        <li class="convention-item">
+          <!-- Wrapped the step text in header to keep things cleanly aligned -->
+          <header class="item-header">
+            <strong class="label">1. Create the project directory</strong>
+            <dfn class="badge">Terminal</dfn>
+          </header>
+
+          <p class="description">Run the following command in your terminal to generate the folder structure:</p>
+
+          <pre><code>mkdir <span class="highlight">name_of_repo</span>
+
+ex: mkdir supermarket-data.js</code></pre>
+        </li>
+
+        <!-- Step 2 -->
+        <li class="convention-item">
+          <header class="item-header">
+            <strong class="label">2. Move into the folder</strong>
+            <dfn class="badge">Terminal</dfn>
+          </header>
+          <p class="description">Change directories into your newly created project folder:</p>
+          <pre><code>cd &lt;name_of_repo&gt;</code></pre>
+        </li>
+
+        <!-- Step 3 -->
+        <li class="convention-item">
+          <header class="item-header">
+            <strong class="label">3. Create files needed</strong>
+            <dfn class="badge">Terminal / GUI</dfn>
+          </header>
+          <p class="description">Can be done with the VS Code GUI if you prefer not to use the terminal.</p>
+          <pre><code>touch &lt;name_of_file.extension&gt;
+<span class="highlight">// example: touch index.html</span></code></pre>
+        </li>
+
+        <!-- Step 4 -->
+        <li class="convention-item">
+          <header class="item-header">
+            <strong class="label">4. Open in VS Code</strong>
+            <dfn class="badge">Terminal</dfn>
+          </header>
+          <p class="description">Launch the current directory workspace within your code editor:</p>
+          <pre><code>code .</code></pre>
+        </li>
+
+        <!-- Step 5 -->
+        <li class="convention-item">
+          <header class="item-header">
+            <strong class="label">5. Initialize the repository</strong>
+            <dfn class="badge">Git</dfn>
+          </header>
+          <p class="description">Start tracking version history in this project folder:</p>
+          <pre><code>git init</code></pre>
+        </li>
+
+        <!-- Step 6 -->
+        <li class="convention-item">
+          <header class="item-header">
+            <strong class="label">6. Push the repo to GitHub</strong>
+            <dfn class="badge">GitHub CLI</dfn>
+          </header>
+          <p class="description">
+            Replace <code>--public</code> with <code>--private</code> if the repository is private.
+          </p>
+          <pre><code>gh repo create &lt;name_of_repo&gt; --public --source=.</code></pre>
+        </li>
+
+        <!-- Step 7 -->
+        <li class="convention-item">
+          <header class="item-header">
+            <strong class="label">7. Check status</strong>
+            <dfn class="badge">Git</dfn>
+          </header>
+          <p class="description">Run this to ensure everything is initialized and working correctly:</p>
+          <pre><code>git status -v</code></pre>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>
