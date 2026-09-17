@@ -1,13 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="naming-convention.css">
-  <title>naming structure</title>
-</head>
-<body>
-    <section class="docs-section">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/terminal/markdown.css" />
+    <title>naming structure</title>
+  </head>
+  <body>
+    <!-- Added missing opening main tag -->
+    <main>
+      <section class="docs-section">
         <h2>🏗️ Directory Tree</h2>
         <pre><code>src/
 ├── 📁 components/                  # Global, shared UI components
@@ -25,27 +27,106 @@
 └── 📁 views/                       # Entire pages / routes
     └── 📄 user-dashboard.jsx</code></pre>
       </section>
-        <section class="docs-section">
-          <h2>🔤 Code Casing Standards</h2>
-          <ul>
-            <li>
-              <strong>Files & Folders:</strong> <code>kebab-case</code> (e.g., <code>user-profile/</code>,
-              <code>profile-card.tsx</code>)
-            </li>
-            <li>
-              <strong>Variables & Functions:</strong> <code>camelCase</code> (e.g., <code>userProfile</code>,
-              <code>fetchData()</code>)
-            </li>
-            <li><strong>Components & Types:</strong> <code>PascalCase</code> (e.g., <code>UserProfileCard</code>)</li>
-            <li><strong>Global Constants:</strong> <code>UPPER_SNAKE</code> (e.g., <code>API_KEY</code>)</li>
-          </ul>
-        </section>
-        <p>1. first make the directory folder by running</p>
-        <pre><code>mkdir <span class="highlight">name_of_repo</span>
 
-ex: mkdir supermarket-data.js
-</code></pre>
+      <!-- Removed the redundant wrapper class="docs-section" that was breaking the structure -->
+
+      <!-- Section 1 -->
+      <section class="section" aria-labelledby="section-1-title">
+        <h2 id="section-1-title" class="section-title">📁 1. Files & Folders (System)</h2>
+        <ul class="convention-list">
+          <li class="convention-item">
+            <header class="item-header">
+              <strong class="label">Folders & Files:</strong>
+              <dfn class="badge">kebab-case</dfn>
+            </header>
+            <p class="description">Keeps names clean, consistent, and URL-friendly.</p>
+            <!-- Grouped examples for easier CSS alignment layout -->
+            <div class="example-group">
+              <samp class="example-box">user-profile/</samp>
+              <samp class="example-box">profile-card.tsx</samp>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Section 2 -->
+      <section class="section" aria-labelledby="section-2-title">
+        <h2 id="section-2-title" class="section-title">💻 2. Code Logic (JavaScript / TypeScript)</h2>
+        <ul class="convention-list">
+          <li class="convention-item">
+            <header class="item-header">
+              <strong class="label">Variables & Functions:</strong>
+              <dfn class="badge">camelCase</dfn>
+            </header>
+            <p class="description">Starts lowercase, capitalizes subsequent words.</p>
+            <div class="example-group">
+              <samp class="example-box">const userProfile = {}</samp>
+              <samp class="example-box">function fetchInvoiceData()</samp>
+            </div>
+          </li>
+          <li class="convention-item">
+            <header class="item-header">
+              <strong class="label">Components, Classes & Types:</strong>
+              <dfn class="badge">PascalCase</dfn>
+            </header>
+            <p class="description">Capitalizes every word.</p>
+            <div class="example-group">
+              <samp class="example-box">const UserProfileCard = () => {}</samp>
+              <samp class="example-box">interface UserData {}</samp>
+            </div>
+          </li>
+          <li class="convention-item">
+            <header class="item-header">
+              <strong class="label">Global Constants / Env Variables:</strong>
+              <dfn class="badge">UPPER_SNAKE_CASE</dfn>
+            </header>
+            <p class="description">Fully capitalized with underscores.</p>
+            <div class="example-group">
+              <samp class="example-box">const API_KEY = '...'</samp>
+            </div>
+          </li>
+          <li class="convention-item">
+            <header class="item-header">
+              <strong class="label">Private / Internal Variables:</strong>
+              <dfn class="badge">_camelCase</dfn>
+            </header>
+            <p class="description">Prefixed with an underscore.</p>
+            <div class="example-group">
+              <samp class="example-box">let _secretToken = ''</samp>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Section 3 -->
+      <section class="section" aria-labelledby="section-3-title">
+        <h2 id="section-3-title" class="section-title">🎨 3. Styling & Elements (HTML / CSS)</h2>
+        <ul class="convention-list">
+          <li class="convention-item">
+            <header class="item-header">
+              <strong class="label">HTML Class Names:</strong>
+              <dfn class="badge">kebab-case</dfn>
+            </header>
+            <p class="description">Industry standard for CSS selectors; matches the file naming convention.</p>
+            <div class="example-group">
+              <samp class="example-box">&lt;div class="profile-card-container"&gt;</samp>
+            </div>
+          </li>
+          <li class="convention-item">
+            <header class="item-header">
+              <strong class="label">HTML Element IDs:</strong>
+              <dfn class="badge">camelCase</dfn>
+              <dfn class="badge">kebab-case</dfn>
+            </header>
+            <p class="description">
+              Use descriptive names specifically reserved for unique JavaScript DOM hooks or layout anchoring.
+            </p>
+            <div class="example-group">
+              <samp class="example-box">&lt;form id="submit-billing-form"&gt;</samp>
+            </div>
+          </li>
+        </ul>
       </section>
     </main>
-</body>
+  </body>
 </html>

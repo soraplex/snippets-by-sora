@@ -1,0 +1,196 @@
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 16px;
+  line-height: 1.6;
+  color: #c9d1d9; /* Light gray text */
+  background-color: #0d1117; /* Dark background */
+  margin: 0;
+  padding: 2rem 1rem;
+}
+
+/* Page Layout Wrapper */
+main,
+.docs-container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1rem 2.5rem;
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #f0f6fc; /* Brighter text for headers */
+}
+
+h1 {
+  font-size: 2rem;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid #21262d;
+}
+
+h2 {
+  font-size: 1.5rem;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid #21262d;
+  margin-top: 2rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+/* Horizontal Rule */
+hr {
+  height: 0.25em;
+  padding: 0;
+  margin: 24px 0;
+  background-color: #21262d;
+  border: 0;
+}
+
+/* Lists */
+ul {
+  padding-left: 2em;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+li {
+  margin-top: 0.25em;
+}
+
+/* Inline Code Highlight (Yellowish/Tan style from screenshot) */
+code {
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  color: #e3b341; /* Warm golden/yellow text color */
+  background-color: rgba(240, 185, 55, 0.1); /* Subtle gold background tint */
+  border-radius: 6px;
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    SF Mono,
+    Menlo,
+    Consolas,
+    Liberation Mono,
+    monospace;
+}
+
+/* Directory Tree & Preformatted Code Blocks */
+pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #161b22; /* Darker tile color for blocks */
+  border-radius: 6px;
+  border: 1px solid #21262d;
+}
+
+pre code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  color: #c9d1d9; /* Maintains normal text inside block */
+  border-radius: 0;
+}
+
+/* Semantic groupings */
+.standards-group {
+  margin-bottom: 1.5rem;
+}
+
+code .highlight {
+  padding: 0.2em 0.4em;
+  margin: 0;
+  color: #7aa2ff;
+  background-color: rgba(122, 162, 255, 0.1);
+  border-radius: 6px;
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    SF Mono,
+    Menlo,
+    Consolas,
+    Liberation Mono,
+    monospace;
+}
+
+/* ─── NEW ALIGNMENT FIXES ─── */
+
+/* Removes standard bullet points and margins for your convention cards */
+.convention-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+/* Individual card styling */
+.convention-item {
+  background-color: #161b22;
+  border: 1px solid #21262d;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+/* Flexbox alignment: Puts Label and Badge side-by-side */
+.item-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.label {
+  color: #f0f6fc;
+}
+
+/* Badge block styling matching your color scheme */
+.badge {
+  background-color: rgba(56, 139, 253, 0.15);
+  color: #58a6ff;
+  font-family: ui-monospace, monospace;
+  padding: 2px 8px;
+  border-radius: 2em;
+  font-style: normal;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid rgba(56, 139, 253, 0.3);
+}
+
+.description {
+  margin: 0 0 12px 0;
+  color: #8b949e;
+  font-size: 0.95rem;
+}
+
+/* Stack the example code blocks cleanly */
+.example-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Styles the code boxes to look like miniature terminal outputs */
+.example-box {
+  display: inline-block;
+  background-color: #0d1117;
+  color: #7ee787; /* Nice terminal green text */
+  font-family: ui-monospace, monospace;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  border: 1px solid #30363d;
+  width: max-content;
+}
