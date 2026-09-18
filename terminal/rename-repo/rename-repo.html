@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/terminal/styles/markdown.css" />
+    <title>renaming a repo</title>
+  </head>
+  <body>
+    <!-- Main container targets your centered page layout wrapper -->
+    <main>
+      <h1>Renaming a Repository</h1>
+
+      <ul class="convention-list">
+        <!-- Step 1 -->
+        <li class="convention-item">
+          <header class="item-header">
+            <strong class="label">1. Change the local folder name</strong>
+            <dfn class="badge">Terminal</dfn>
+          </header>
+          <p class="description">
+            Step backward out of the project folder, rename it, and move back inside to prevent path lock errors:
+          </p>
+          <pre><code>cd ..
+mv supermarket-data fresh-grocery-api
+cd fresh-grocery-api</code></pre>
+        </li>
+
+        <!-- Step 2 -->
+        <li class="convention-item">
+          <header class="item-header">
+            <strong class="label">2. Set the new remote origin URL</strong>
+            <dfn class="badge">Git</dfn>
+          </header>
+          <p class="description">
+            Link your local workspace configuration to point to the newly updated remote URL destination on GitHub:
+          </p>
+          <pre><code>git remote set-url origin https://github.com/your_github_username/new_repo_name
+
+ex: git remote set-url origin https://github.com/pretendAccount/fresh-grocery-api</code></pre>
+        </li>
+
+        <!-- Step 3 -->
+        <li class="convention-item">
+          <header class="item-header">
+            <strong class="label">3. Verify remote connections</strong>
+            <dfn class="badge">Git</dfn>
+          </header>
+          <p class="description">
+            Check the updated paths to confirm that both fetch and push locations are tracking correctly:
+          </p>
+          <pre><code>git remote -v
+
+ex output:
+origin https://github.com (fetch)
+origin https://github.com (push)</code></pre>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>

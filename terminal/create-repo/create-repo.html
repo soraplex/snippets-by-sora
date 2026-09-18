@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/terminal/styles/markdown.css" />
+    <title>creating a repo</title>
+  </head>
+  <body>
+    <main>
+      <h1>Creating a Repository</h1>
+      <ul class="convention-list">
+        <!-- Step 1 -->
+        <li class="convention-item">
+          <header class="item-header">
+            <strong class="label">1. Create the project directory</strong>
+            <dfn class="badge">Terminal</dfn>
+          </header>
+          <p class="description">Run the following command in your terminal to generate the folder structure:</p>
+          <pre><code>mkdir <span class="highlight">name_of_repo</span>
+
+ex: mkdir supermarket</code></pre>
+        </li>
+
+        <!-- Step 2 -->
+        <li class="convention-item">
+          <header class="item-header">
+            <strong class="label">2. Move into the folder</strong>
+            <dfn class="badge">Terminal</dfn>
+          </header>
+          <p class="description">Change directories into your newly created project folder:</p>
+          <pre><code>cd name_of_repo</code></pre>
+        </li>
+
+        <!-- Step 3 -->
+        <li class="convention-item">
+          <header class="item-header">
+            <strong class="label">3. Create files needed</strong>
+            <dfn class="badge">Terminal / GUI</dfn>
+          </header>
+          <p class="description">Can be done with the VS Code GUI if you prefer not to use the terminal.</p>
+          <pre><code>touch name_of_file.extension
+<span class="highlight">// example: touch index.html</span></code></pre>
+        </li>
+
+        <!-- Step 4 -->
+        <li class="convention-item">
+          <header class="item-header">
+            <strong class="label">4. Open in VS Code</strong>
+            <dfn class="badge">Terminal</dfn>
+          </header>
+          <p class="description">Launch the current directory workspace within your code editor:</p>
+          <pre><code>code .</code></pre>
+        </li>
+
+        <!-- Step 5 (Optimized) -->
+        <li class="convention-item">
+          <header class="item-header">
+            <strong class="label">5. Initialize and push to GitHub</strong>
+            <dfn class="badge">GitHub CLI</dfn>
+          </header>
+          <p class="description">
+            This handles git initialization, remote setup, and your initial push all at once. Replace
+            <code>--public</code> with <code>--private</code> if needed:
+          </p>
+          <pre><code>gh repo create name_of_repo --public --source=. --remote=origin --push</code></pre>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>
