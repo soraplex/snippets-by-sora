@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/terminal/styles/markdown.css" />
+    <title>Vite React Setup Guide</title>
+  </head>
+  <body>
+    <main>
+      <h1>Vite React Setup Guide</h1>
+
+      <ul class="convention-list">
+        <li class="convention-item">
+          <div class="item-header">
+            <strong class="label">1. Create React App</strong>
+            <span class="badge">Terminal</span>
+          </div>
+          <p class="description">Initialize your new application using Vite with the standard React template.</p>
+          <div class="example-group">
+            <pre><code class="highlight">npm create vite@latest &lt;name_of_repo&gt; -- --template react</code></pre>
+          </div>
+        </li>
+
+        <li class="convention-item">
+          <div class="item-header">
+            <strong class="label">2. Move into the App Directory & Install Dependencies</strong>
+            <span class="badge">Terminal</span>
+          </div>
+          <p class="description">
+            Navigate into your project folder and download the required node modules in one step.
+          </p>
+          <div class="example-group">
+            <pre><code class="highlight">cd &lt;name_of_repo&gt; && npm install</code></pre>
+          </div>
+        </li>
+
+        <li class="convention-item">
+          <div class="item-header">
+            <strong class="label">3. Start Live Server</strong>
+            <span class="badge">Terminal</span>
+          </div>
+          <p class="description">Launch the local Vite development server to preview your application.</p>
+          <div class="example-group">
+            <pre><code class="highlight">npm run dev</code></pre>
+          </div>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>
