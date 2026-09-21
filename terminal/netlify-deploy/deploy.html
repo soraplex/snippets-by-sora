@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/terminal/styles/markdown.css" />
+    <title>Netlify Deployment Guide</title>
+  </head>
+  <body>
+    <main>
+      <h1>Netlify Deployment Guide</h1>
+
+      <ul class="convention-list">
+        <li class="convention-item">
+          <div class="item-header">
+            <strong class="label">1. Install Netlify Command Line Packages</strong>
+            <span class="badge">Terminal</span>
+          </div>
+          <p class="description">Globally install the Netlify CLI tooling to access terminal deployment features.</p>
+          <div class="example-group">
+            <pre>npm install netlify-cli -g</pre>
+          </div>
+        </li>
+
+        <li class="convention-item">
+          <div class="item-header">
+            <strong class="label">2. Log In into Netlify</strong>
+            <span class="badge">Terminal</span>
+          </div>
+          <p class="description">Authenticate your local terminal session with your Netlify cloud profile account.</p>
+          <div class="example-group">
+            <pre>netlify login</pre>
+          </div>
+        </li>
+
+        <li class="convention-item">
+          <div class="item-header">
+            <strong class="label">3. Build Your App</strong>
+            <span class="badge">Terminal</span>
+          </div>
+          <p class="description">Compile your source code components into optimized production assets.</p>
+          <div class="example-group">
+            <pre>npm run build</pre>
+          </div>
+        </li>
+
+        <li class="convention-item">
+          <div class="item-header">
+            <strong class="label">4. Initialize to Netlify and Choose Directory</strong>
+            <span class="badge">Terminal</span>
+          </div>
+          <p class="description">
+            Link your local repo to Netlify. When prompted by the wizard, choose your publish directory:
+            <code class="highlight">./dist</code> (Vite standard).
+          </p>
+          <div class="example-group">
+            <pre>netlify init</pre>
+          </div>
+        </li>
+
+        <li class="convention-item">
+          <div class="item-header">
+            <strong class="label">5. Deploy Preview of Site</strong>
+            <span class="badge">Terminal</span>
+          </div>
+          <p class="description">
+            Generate a temporary, draft deployment link to double-check that your builds render accurately.
+          </p>
+          <div class="example-group">
+            <pre>netlify deploy</pre>
+          </div>
+        </li>
+
+        <li class="convention-item">
+          <div class="item-header">
+            <strong class="label">6. Create Live Production URL</strong>
+            <span class="badge">Terminal</span>
+          </div>
+          <p class="description">
+            Publish your current build files to the live, customer-facing web environment production server.
+          </p>
+          <div class="example-group">
+            <pre>netlify deploy --prod</pre>
+          </div>
+        </li>
+
+        <li class="convention-item">
+          <div class="item-header">
+            <strong class="label">7. Verify Deployment Success</strong>
+            <span class="badge">Terminal</span>
+          </div>
+          <p class="description">
+            Check your central Netlify profile web interface dashboard to confirm the status of your app lifecycle
+            assets.
+          </p>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>
