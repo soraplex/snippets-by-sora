@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="api-table.css">
+    <title>crypto price tracker</title>
+  </head>
+  <body>
+    <header>
+      <section>
+        <h1>Live Crypto Prices</h1>
+        <p>Powered by CoinGecko API</p>
+      </section>
+
+      <aside id="status" aria-live="polite">Fetching…</aside>
+    </header>
+
+    <main>
+      <section class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Coin</th>
+              <th scope="col" class="num">Price (USD)</th>
+            </tr>
+          </thead>
+
+          <tbody id="table-body">
+            <tr class="skeleton">
+              <td><div class="skel wide"></div></td>
+              <td><div class="skel short"></div></td>
+            </tr>
+            <tr class="skeleton">
+              <td><div class="skel wide"></div></td>
+              <td><div class="skel short"></div></td>
+            </tr>
+            <tr class="skeleton">
+              <td><div class="skel wide"></div></td>
+              <td><div class="skel short"></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+    <script src="api-table.js"></script>
+  </body>
+</html>

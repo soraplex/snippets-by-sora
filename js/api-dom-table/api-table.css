@@ -1,0 +1,199 @@
+/* --- GLOBAL RESET --- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #0d0d0f;
+  color: #e8e8ea;
+  min-height: 100vh;
+  padding: 40px 24px;
+}
+
+/* --- HEADER --- */
+header {
+  max-width: 700px;
+  margin: 0 auto 28px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+header h1 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.3px;
+}
+
+header p {
+  font-size: 12px;
+  color: #6b6b75;
+  margin-top: 4px;
+}
+
+#status {
+  font-size: 12px;
+  color: #6b6b75;
+  text-align: right;
+}
+
+#status.error {
+  color: #ef4444;
+}
+#status.ok {
+  color: #22c55e;
+}
+
+/* --- TABLE WRAPPER --- */
+.table-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  border: 1px solid #1e1e24;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #131316;
+}
+
+thead th {
+  padding: 12px 18px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #6b6b75;
+  border-bottom: 1px solid #1e1e24;
+}
+
+thead th.num {
+  text-align: right;
+}
+
+tbody tr {
+  border-bottom: 1px solid #1a1a1f;
+  transition: background 0.15s;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+tbody tr:hover {
+  background: #131316;
+}
+
+td {
+  padding: 16px 18px;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- COIN CELL --- */
+.coin-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.coin-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.coin-name {
+  font-weight: 600;
+  color: #fff;
+}
+
+.coin-symbol {
+  font-size: 12px;
+  color: #6b6b75;
+}
+
+.price {
+  font-weight: 600;
+  color: #fff;
+  font-size: 15px;
+}
+
+/* --- SKELETON LOADER --- */
+.skeleton td {
+  padding: 18px;
+}
+
+.skel {
+  height: 14px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #1e1e24 25%, #2a2a32 50%, #1e1e24 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+.skel.wide {
+  width: 140px;
+}
+.skel.short {
+  width: 80px;
+  margin-left: auto;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.price-change-up {
+  animation: flashUp 0.6s;
+}
+
+.price-change-down {
+  animation: flashDown 0.6s;
+}
+
+@keyframes flashUp {
+  0% {
+    color: #22c55e;
+  }
+  100% {
+    color: #fff;
+  }
+}
+
+@keyframes flashDown {
+  0% {
+    color: #ef4444;
+  }
+  100% {
+    color: #fff;
+  }
+}
