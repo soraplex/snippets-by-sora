@@ -1,0 +1,155 @@
+/* ---------------- GLOBAL RESET & OPTIMIZATIONS ---------------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+    url("https://images.unsplash.com/photo-1485470733090-0aae1788d5af?fm=jpg&q=60&w=3000&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Parallax tracking feel */
+  display: grid;
+  place-items: center;
+  padding: 2rem 1.5rem;
+}
+
+/* ---------------- CATALOG LAYOUT GRID CONTAINER ---------------- */
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 300px);
+  gap: 2rem;
+  max-width: 1100px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* ---------------- SEMANTIC CARD MASTER BLOCK ---------------- */
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border: 1px solid rgba(255, 255, 255, 0.12); /* Soft glass stroke border */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  transition:
+    transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px); /* Floating interaction motion rule */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------------- CARD MEDIA ELEMENT BLOCK ---------------- */
+.card-media {
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  margin: 0;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------------- LAYERED CARD BODY & BLUR ELEMENTS ---------------- */
+.card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background: rgba(20, 20, 23, 0.7); /* Frosted dark background texture */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px); /* Safari support fallback engine */
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.card-header {
+  margin-bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.card-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  display: block;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #e4e4e7;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+/* ---------------- BUTTON INTERACTIONS & ALIGNMENTS ---------------- */
+.card-actions {
+  margin-top: auto; /* Pushes button layer cleanly to the card edge baseline */
+  display: flex;
+  width: 100%;
+}
+
+.card-actions.align-left {
+  justify-content: flex-start;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #914c54; /* Crimson Rose tone */
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.btn.w-full {
+  width: 100%;
+  text-align: center;
+  padding: 0.75rem 1.2rem;
+}
+
+.btn:hover {
+  background-color: #aa5a63; /* Brightens slightly on mouse contact */
+}
+
+.btn:active {
+  transform: scale(0.98); /* Tactile press feedback mechanical simulation */
+}
