@@ -14,13 +14,14 @@ body {
   font-family: Arial, sans-serif;
   display: grid;
   grid-template-rows: auto auto 1fr auto;
-  background: #f5f5f5;
-  color: #222;
+  background: #fcf9f6; 
+  color: #332015; 
+  overflow-x: hidden;
 }
 
 /* ---------------- HEADER ---------------- */
 header {
-  background: #1e293b; /* UPDATED FROM GREEN */
+  background: #332015; 
   color: #fff;
   padding: 2rem 1rem;
   text-align: center;
@@ -33,7 +34,8 @@ header h1 {
 
 /* ---------------- NAV ---------------- */
 nav {
-  background: #334155; /* UPDATED FROM GREEN */
+  background: #664632;
+  width: 100%;
 }
 
 nav ul {
@@ -48,17 +50,27 @@ nav a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.15); /* Soft highlight overlay */
+  color: #fcf9f6;
 }
 
 /* ---------------- MAIN ---------------- */
 main {
-  flex: 1;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 300px);
   gap: 2rem;
   padding: 2rem;
-  background: #eef2f7;
+  background: #f4eae1; 
 }
+
 /* Services Section */
 #services {
   background: #fff;
@@ -66,13 +78,12 @@ main {
   border-radius: 12px;
 }
 
-/* Improved Article Spacing */
 #services article {
   margin-top: 1.5rem;
   padding: 1.5rem;
-  background: #eef2f5;
+  background: #f5edd8; 
   border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 3px 8px rgba(51, 32, 21, 0.08); 
   line-height: 1.6;
 }
 
@@ -82,11 +93,11 @@ main {
 
 /* Aside */
 aside {
-  background: #dde6ee;
+  background: #e5d5c5;
   padding: 1.5rem;
   border-radius: 8px;
   line-height: 1.6;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 6px rgba(51, 32, 21, 0.05);
 }
 
 aside h2 {
@@ -99,7 +110,7 @@ aside p {
 
 /* ---------------- FOOTER ---------------- */
 footer {
-  background: #1e293b; /* UPDATED FROM GREEN */
+  background: #332015;
   color: #fff;
   text-align: center;
   padding: 1rem;
@@ -108,7 +119,7 @@ footer {
 /* ---------------- TABLET RESPONSIVE ---------------- */
 @media (max-width: 1024px) {
   main {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
     gap: 1.5rem;
     padding: 1.5rem;
   }
@@ -130,11 +141,12 @@ footer {
 @media (max-width: 768px) {
   main {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   aside {
     width: 100%;
-    margin-top: 1.5rem;
+    margin-top: 0;
   }
 
   nav ul {
