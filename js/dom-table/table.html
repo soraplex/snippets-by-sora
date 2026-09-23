@@ -3,41 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="table.css" />
-    <title>Corporate Personnel Ledger Canvas</title>
+    <link rel="stylesheet" href="table.css">
+    <title>Document</title>
   </head>
   <body>
-    <!-- Clean semantic main grid wrapper -->
-    <main class="table-container">
-      <!-- Header region containing semantic title and subtitle description context -->
-      <header class="table-view-header">
-        <h2>Employee Directory</h2>
-        <p>Real-time corporate personnel index populated natively via decoupled data streams.</p>
-      </header>
+    <header class="watchlist-header">
+      <section class="watchlist-info">
+        <h1>S&P 500 Watchlist</h1>
+        <p>NYSE · NASDAQ · Sep 22, 2026 · 4:00 PM ET</p>
+      </section>
 
-      <!-- Semantic section wrapper housing responsive tracking boundaries -->
-      <section class="table-responsive-wrapper">
-        <table class="data-table">
+      <aside class="legend" aria-label="Market movement legend">
+        <span>
+          <span class="dot" style="background: #16a34a"></span>
+          Gaining
+        </span>
+        <span>
+          <span class="dot" style="background: #dc2626"></span>
+          Losing
+        </span>
+      </aside>
+    </header>
+
+    <main>
+      <section class="table-wrapper">
+        <table>
           <thead>
             <tr>
-              <th scope="col">Name</th>
-              <th scope="col">Username</th>
-              <th scope="col">Email Address</th>
-              <th scope="col">Phone</th>
-              <th scope="col">Company Name</th>
-              <th scope="col">Action</th>
+              <th scope="col">Company</th>
+              <th scope="col" class="num">Price</th>
+              <th scope="col" class="num">24h Change</th>
+              <th scope="col" class="num">Open</th>
+              <th scope="col" class="num">52w High</th>
+              <th scope="col" class="num">52w Low</th>
+              <th scope="col" class="num">Mkt Cap</th>
+              <th scope="col" class="num">P/E</th>
+              <th scope="col">Sector</th>
             </tr>
           </thead>
-          <tbody id="directory-table-body">
-            <tr>
-              <td colspan="6" class="table-status-cell">Assembling secure personnel registry matrix tracks...</td>
-            </tr>
-          </tbody>
+
+          <tbody id="table-body"></tbody>
         </table>
       </section>
     </main>
-
-    <!-- Script mounts here to execute procedural element tree construction loops -->
+    <script src="stock-data.js"></script>
     <script src="table.js"></script>
   </body>
 </html>

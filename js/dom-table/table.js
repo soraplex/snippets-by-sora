@@ -1,83 +1,103 @@
-/**
- * REUSABLE DIRECTORY PAYLOAD DECK (LOCAL DATA STREAM)
- */
-const mockUserStream = [
-  {
-    name: "Leanne Graham",
-    username: "bret",
-    email: "Sincere@april.biz",
-    phone: "1-770-736-8031",
-    company: { name: "Romaguera-Crona" },
-  },
-  {
-    name: "Ervin Howell",
-    username: "antonette",
-    email: "Shanna@melissa.tv",
-    phone: "010-692-6593",
-    company: { name: "Deckow-Crist" },
-  },
-  {
-    name: "Clementine Bauch",
-    username: "samantha",
-    email: "Nathan@yesenia.net",
-    phone: "1-463-123-4447",
-    company: { name: "Romaguera-Jacobson" },
-  },
-  {
-    name: "Patricia Lebsack",
-    username: "karianne",
-    email: "Julianne.OConner@kory.org",
-    phone: "493-170-9623",
-    company: { name: "Robel-Corkery" },
-  },
-];
+// Makes big numbers readable by adding commas
+function addCommas(number) {
+  return number.toLocaleString("en-US");
+}
 
-document.addEventListener("DOMContentLoaded", () => {
-  const tableBody = document.getElementById("directory-table-body");
-  if (!tableBody) return;
+// Converts market cap into T / B / M (Trillion / Billion / Million)
+function formatMarketCap(value) {
+  if (value >= 1e12) return "$" + (value / 1e12).toFixed(2) + "T"; // trillion
+  if (value >= 1e9) return "$" + (value / 1e9).toFixed(2) + "B"; // billion
+  return "$" + (value / 1e6).toFixed(2) + "M"; // million
+}
 
-  // Clear streaming placeholder text
-  tableBody.innerHTML = "";
+const tbody = document.getElementById("table-body");
 
-  // FIXED: Maps your requested procedural loop to construct semantic <tr> rows
-  for (const user of mockUserStream) {
-    let row = document.createElement("tr");
+for (const stock of stocks) {
+  const tr = document.createElement("tr");
 
-    let nameCell = document.createElement("td");
-    nameCell.className = "directory-name";
-    nameCell.textContent = user.name;
-    row.appendChild(nameCell);
+  // --- Company cell ---
+  const tdCompany = document.createElement("td");
+  const cell = document.createElement("div");
+  cell.className = "ticker-cell";
 
-    let userCell = document.createElement("td");
-    let userBadge = document.createElement("span");
-    userBadge.className = "directory-username";
-    userBadge.textContent = `@${user.username}`;
-    userCell.appendChild(userBadge);
-    row.appendChild(userCell);
+  const badge = document.createElement("div");
+  badge.className = "ticker-badge";
+  badge.style.background = stock.bg;
+  badge.style.color = stock.color;
+  badge.innerText = stock.ticker.length > 4 ? stock.ticker.slice(0, 3) : stock.ticker;
 
-    let emailCell = document.createElement("td");
-    emailCell.className = "directory-email";
-    emailCell.textContent = user.email.toLowerCase();
-    row.appendChild(emailCell);
+  const info = document.createElement("div");
 
-    let phoneCell = document.createElement("td");
-    phoneCell.className = "directory-phone";
-    phoneCell.textContent = user.phone;
-    row.appendChild(phoneCell);
+  const name = document.createElement("div");
+  name.className = "ticker-name";
+  name.innerText = stock.name;
 
-    let companyCell = document.createElement("td");
-    companyCell.className = "directory-company";
-    companyCell.textContent = user.company.name;
-    row.appendChild(companyCell);
+  const ticker = document.createElement("div");
+  ticker.className = "ticker-sector";
+  ticker.innerText = stock.ticker;
 
-    let actionCell = document.createElement("td");
-    let actionBtn = document.createElement("a");
-    actionBtn.className = "directory-btn";
-    actionBtn.href = `mailto:${user.email}`;
-    actionBtn.textContent = "Email";
-    actionCell.appendChild(actionBtn);
-    row.appendChild(actionCell);
+  info.appendChild(name);
+  info.appendChild(ticker);
 
-    tableBody.appendChild(row);
-  }
-});
+  cell.appendChild(badge);
+  cell.appendChild(info);
+  tdCompany.appendChild(cell);
+  tr.appendChild(tdCompany);
+
+  // --- Price ---
+  const tdPrice = document.createElement("td");
+  tdPrice.className = "num price";
+  tdPrice.innerText = "$" + addCommas(stock.price);
+  tr.appendChild(tdPrice);
+
+  // --- Change ---
+  const tdChange = document.createElement("td");
+  tdChange.className = "num";
+
+  const pill = document.createElement("span");
+  pill.className = "change-pill " + (stock.change >= 0 ? "up" : "down");
+  pill.innerText = (stock.change >= 0 ? "▲ +" : "▼ ") + stock.change.toFixed(2) + "%";
+
+  tdChange.appendChild(pill);
+  tr.appendChild(tdChange);
+
+  // --- Open ---
+  const tdOpen = document.createElement("td");
+  tdOpen.className = "num muted";
+  tdOpen.innerText = "$" + addCommas(stock.open);
+  tr.appendChild(tdOpen);
+
+  // --- 52w High ---
+  const tdHigh = document.createElement("td");
+  tdHigh.className = "num muted";
+  tdHigh.innerText = "$" + addCommas(stock.high52);
+  tr.appendChild(tdHigh);
+
+  // --- 52w Low ---
+  const tdLow = document.createElement("td");
+  tdLow.className = "num muted";
+  tdLow.innerText = "$" + addCommas(stock.low52);
+  tr.appendChild(tdLow);
+
+  // --- Market Cap ---
+  const tdCap = document.createElement("td");
+  tdCap.className = "num muted";
+  tdCap.innerText = formatMarketCap(stock.cap);
+  tr.appendChild(tdCap);
+
+  // --- P/E ---
+  const tdPE = document.createElement("td");
+  tdPE.className = "num pe";
+  tdPE.innerText = addCommas(stock.pe);
+  tr.appendChild(tdPE);
+
+  // --- Sector ---
+  const tdSector = document.createElement("td");
+  const tag = document.createElement("span");
+  tag.className = "tag";
+  tag.innerText = stock.sector;
+  tdSector.appendChild(tag);
+  tr.appendChild(tdSector);
+
+  tbody.appendChild(tr);
+}

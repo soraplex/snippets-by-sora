@@ -1,190 +1,194 @@
-/* ---------------- GLOBAL RESET & CORE CANVAS ---------------- */
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif;
-  background:
-    radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 40%), #0f1115; /* Slate Black Executive Background Canvas */
-  color: #f4f4f5;
-  padding: 60px 24px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f4f5f7;
+  color: #1a1a2e;
   min-height: 100vh;
+  padding: 40px 24px;
+}
+
+header {
+  max-width: 1000px;
+  margin: 0 auto 28px;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  overflow-x: hidden;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
-.table-container {
-  max-width: 1100px;
-  width: 100%;
+header h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a2e;
+  letter-spacing: -0.4px;
 }
 
-/* ---------------- TYPOGRAPHY & HEADER ---------------- */
-.table-view-header {
-  margin-bottom: 3rem;
-  text-align: left;
+header p {
+  font-size: 12px;
+  color: #9b9bab;
+  margin-top: 4px;
 }
 
-.table-view-header h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #ffffff;
-  letter-spacing: -0.03em;
-  background: linear-gradient(to right, #ffffff, #94a3b8);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 0.5rem;
+.legend {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: #9b9bab;
 }
 
-.table-view-header p {
-  color: #94a3b8; /* Muted Slate Gray Subtext */
-  font-size: 1rem;
-  font-weight: 400;
+.legend span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-/* ---------------- PREMIUM FROSTED CHARCOAL WRAPPER ---------------- */
-section.table-responsive-wrapper {
-  width: 100%;
-  overflow-x: auto;
-  background: rgba(24, 30, 36, 0.7); /* Translucent Charcoal plate texture */
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px); /* Apple compatibility layer */
-  border: 1px solid rgba(255, 255, 255, 0.06); /* Crisp structural edge rim */
-  border-radius: 16px;
-  box-shadow:
-    0 4px 30px rgba(0, 0, 0, 0.5),
-    0 20px 50px rgba(0, 0, 0, 0.6),
-    inset 0 1px 1px rgba(255, 255, 255, 0.05);
+.legend .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
 }
 
-/* ---------------- HIGH-TECH EXECUTIVE DATA TABLE ---------------- */
-.data-table {
+.table-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #e4e4ec;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+table {
   width: 100%;
   border-collapse: collapse;
+}
+
+thead {
+  background: #fafafa;
+  border-bottom: 1px solid #e4e4ec;
+}
+
+thead th {
+  padding: 11px 18px;
   text-align: left;
-  font-size: 0.95rem;
-  white-space: nowrap;
-}
-
-.data-table thead {
-  background: #11161b; /* Ultra-Dark Grid Anchoring Header */
-}
-
-.data-table th {
-  padding: 1.25rem 1.75rem;
-  font-weight: 700;
-  font-size: 0.75rem;
+  font-size: 11px;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #64748b; /* Clear Slate Heading Labels */
-  border-bottom: 2px solid #2e3742;
+  letter-spacing: 0.7px;
+  color: #9b9bab;
 }
 
-.data-table td {
-  padding: 1.25rem 1.75rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-  color: #cbd5e1;
+thead th.num {
+  text-align: right;
+}
+
+tbody tr {
+  border-bottom: 1px solid #f0f0f5;
+  transition: background 0.12s;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: #f8f8fc;
+}
+
+td {
+  padding: 14px 18px;
+  font-size: 14px;
   vertical-align: middle;
-  transition: color 0.2s ease;
 }
 
-/* Row Striping */
-.data-table tbody tr {
-  background: transparent;
-  transition:
-    background-color 0.2s ease,
-    box-shadow 0.2s ease;
+td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
 }
 
-.data-table tbody tr:nth-child(even) {
-  background: rgba(255, 255, 255, 0.01);
+.ticker-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-/* Interactive Glowing Row Focus State */
-.data-table tbody tr:hover {
-  background: rgba(56, 189, 248, 0.04); /* Icy Blue translucent wash */
-  box-shadow: inset 2px 0 0 #38bdf8; /* Sharp Ice Blue border edge anchoring highlight */
-}
-
-.data-table tbody tr:hover td {
-  color: #ffffff; /* Illuminates text cells cleanly on hover active focus */
-}
-
-/* ---------------- DESIGN MATRIX COMPONENTS ---------------- */
-.directory-name {
-  font-weight: 600;
-  color: #ffffff;
-}
-
-/* Tech-Pro Data Badge Selector (Clean Ice Blue Scheme) */
-.directory-username {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  background: rgba(56, 189, 248, 0.08); /* Translucent electric ice blue backing */
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
-  font-size: 0.8rem;
-  color: #38bdf8; /* Crisp ice blue text token */
-  font-weight: 600;
-  border: 1px solid rgba(56, 189, 248, 0.15);
-}
-
-.directory-email {
-  color: #94a3b8;
-}
-
-.directory-phone {
-  font-family: ui-monospace, monospace;
-  color: #94a3b8;
-}
-
-.directory-company {
-  color: #cbd5e1;
-}
-
-/* Sleek Minimalist CTA Action Button Link */
-.directory-btn {
-  display: inline-flex;
+.ticker-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  background: #232b35; /* Clean Charcoal Base */
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 700;
-  padding: 0.5rem 1.2rem;
-  border-radius: 8px;
-  border: 1px solid #2e3742;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  font-size: 11px;
+  font-weight: 800;
+  flex-shrink: 0;
+  letter-spacing: -0.3px;
 }
 
-.directory-btn:hover {
-  background: #38bdf8; /* Fills block dynamically on contact */
-  color: #0f1115; /* High-contrast ink text swap */
-  border-color: #38bdf8;
-  box-shadow: 0 0 15px rgba(56, 189, 248, 0.4); /* Ice blue light bloom ray */
-  transform: translateY(-1px);
+.ticker-name {
+  font-weight: 600;
+  color: #1a1a2e;
+  font-size: 14px;
 }
 
-.directory-btn:active {
-  transform: translateY(0);
+.ticker-sector {
+  font-size: 11px;
+  color: #9b9bab;
+  margin-top: 1px;
 }
 
-.table-status-cell {
-  text-align: center;
-  padding: 5rem !important;
-  color: #64748b;
-  font-style: italic;
+.price {
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.change.up {
+  color: #16a34a;
+}
+.change.down {
+  color: #dc2626;
+}
+
+.change-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.change-pill.up {
+  background: #dcfce7;
+  color: #16a34a;
+}
+.change-pill.down {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.muted {
+  color: #6b6b80;
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 500;
+  background: #f0f0f5;
+  color: #6b6b80;
+}
+
+.pe {
+  font-variant-numeric: tabular-nums;
+  color: #6b6b80;
 }
