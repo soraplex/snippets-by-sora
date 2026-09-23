@@ -142,7 +142,6 @@ td.num {
   font-size: 15px;
 }
 
-/* --- SKELETON LOADER --- */
 .skeleton td {
   padding: 18px;
 }
@@ -173,27 +172,19 @@ td.num {
 }
 
 .price-change-up {
-  animation: flashUp 0.6s;
+  animation: fadeUp 5s ease-out;
 }
 
 .price-change-down {
-  animation: flashDown 0.6s;
+  animation: fadeDown 5s ease-out;
 }
 
-@keyframes flashUp {
-  0% {
-    color: #22c55e;
-  }
-  100% {
-    color: #fff;
-  }
+@keyframes fadeUp {
+  0% { color: #22c55e; }
+  100% { color: #fff; }
 }
 
-@keyframes flashDown {
-  0% {
-    color: #ef4444;
-  }
-  100% {
-    color: #fff;
-  }
+@keyframes fadeDown {
+  0% { color: #ef4444; }
+  100% { color: #fff; }
 }

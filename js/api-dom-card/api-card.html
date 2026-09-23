@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="api-card.css" />
+    <title>crypto price tracker</title>
+  </head>
+  <body>
+    <header>
+      <section>
+        <h1>Live Crypto Prices</h1>
+        <p>Powered by CoinGecko API</p>
+      </section>
+
+      <aside id="status" aria-live="polite">Fetching…</aside>
+    </header>
+
+    <main>
+      <section id="card-grid" class="card-grid">
+      </section>
+    </main>
+
+    <script src="api-card.js"></script>
+  </body>
+</html>
