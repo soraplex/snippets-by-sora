@@ -6,7 +6,6 @@ const coinMeta = {
   solana: { name: "Solana", symbol: "SOL", color: "#9945ff", bg: "#160a2a" },
 };
 
-// Format price with commas + 2 decimals
 function formatPrice(value) {
   return (
     "$" +
@@ -17,12 +16,10 @@ function formatPrice(value) {
   );
 }
 
-// Build a table row using ONLY createElement + innerText
 function createRow(id, price) {
   const meta = coinMeta[id];
   const tr = document.createElement("tr");
 
-  // --- Coin cell ---
   const tdCoin = document.createElement("td");
   const coinCell = document.createElement("div");
   coinCell.className = "coin-cell";
@@ -51,11 +48,10 @@ function createRow(id, price) {
   tdCoin.appendChild(coinCell);
   tr.appendChild(tdCoin);
 
-  // --- Price cell ---
   const tdPrice = document.createElement("td");
   tdPrice.className = "num price";
   tdPrice.innerText = formatPrice(price);
-  tdPrice.dataset.price = price; // store last price
+  tdPrice.dataset.price = price;
   tr.appendChild(tdPrice);
 
   return tr;
@@ -71,17 +67,18 @@ async function fetchPrices() {
 
     const data = await res.json();
 
-    // If first load: remove skeleton rows
-    if (tbody.children[0]?.classList.contains("skeleton")) {
-      while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
+    // FIXED: always remove skeleton rows
+    if (tbody.querySelector(".skeleton")) {
+      tbody.innerHTML = "";
     }
 
-    // Update or create rows
     for (const id of Object.keys(data)) {
       const newPrice = data[id].usd;
 
-      // Find existing row
-      const existingRow = [...tbody.children].find((row) => row.firstChild.innerText.includes(coinMeta[id].name));
+      // FIXED: reliable row detection
+      const existingRow = [...tbody.children].find(
+        (row) => row.querySelector(".coin-name")?.innerText === coinMeta[id].name,
+      );
 
       if (existingRow) {
         const priceCell = existingRow.children[1];
@@ -90,20 +87,18 @@ async function fetchPrices() {
         priceCell.dataset.price = newPrice;
         priceCell.innerText = formatPrice(newPrice);
 
-        // Animate price change
         if (newPrice > oldPrice) {
           priceCell.classList.add("price-change-up");
-          setTimeout(() => priceCell.classList.remove("price-change-up"), 600);
+          setTimeout(() => priceCell.classList.remove("price-change-up"), 5000);
         } else if (newPrice < oldPrice) {
           priceCell.classList.add("price-change-down");
-          setTimeout(() => priceCell.classList.remove("price-change-down"), 600);
+          setTimeout(() => priceCell.classList.remove("price-change-down"), 5000);
         }
       } else {
         tbody.appendChild(createRow(id, newPrice));
       }
     }
 
-    // Update status
     const now = new Date().toLocaleTimeString("en-US", {
       hour: "2-digit",
       minute: "2-digit",
@@ -115,25 +110,8 @@ async function fetchPrices() {
   } catch (err) {
     statusEl.className = "error";
     statusEl.innerText = `Error: ${err.message}`;
-
-    // Clear table and show fallback
-    while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
-
-    const tr = document.createElement("tr");
-    const td = document.createElement("td");
-    td.colSpan = 2;
-    td.style.textAlign = "center";
-    td.style.color = "#6b6b75";
-    td.style.padding = "32px";
-    td.innerText = "Could not load prices. CoinGecko may be rate-limiting — try again shortly.";
-
-    tr.appendChild(td);
-    tbody.appendChild(tr);
   }
 }
 
-// Initial load
 fetchPrices();
-
-// Auto-refresh every 10 seconds
 setInterval(fetchPrices, 10000);

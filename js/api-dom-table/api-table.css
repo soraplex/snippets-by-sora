@@ -1,7 +1,5 @@
 /* --- GLOBAL RESET --- */
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -44,12 +42,8 @@ header p {
   text-align: right;
 }
 
-#status.error {
-  color: #ef4444;
-}
-#status.ok {
-  color: #22c55e;
-}
+#status.error { color: #ef4444; }
+#status.ok    { color: #22c55e; }
 
 /* --- TABLE WRAPPER --- */
 .table-wrapper {
@@ -80,21 +74,15 @@ thead th {
   border-bottom: 1px solid #1e1e24;
 }
 
-thead th.num {
-  text-align: right;
-}
+thead th.num { text-align: right; }
 
 tbody tr {
   border-bottom: 1px solid #1a1a1f;
   transition: background 0.15s;
 }
 
-tbody tr:last-child {
-  border-bottom: none;
-}
-tbody tr:hover {
-  background: #131316;
-}
+tbody tr:last-child { border-bottom: none; }
+tbody tr:hover { background: #131316; }
 
 td {
   padding: 16px 18px;
@@ -142,9 +130,8 @@ td.num {
   font-size: 15px;
 }
 
-.skeleton td {
-  padding: 18px;
-}
+/* --- SKELETON LOADER --- */
+.skeleton td { padding: 18px; }
 
 .skel {
   height: 14px;
@@ -154,23 +141,15 @@ td.num {
   animation: shimmer 1.4s infinite;
 }
 
-.skel.wide {
-  width: 140px;
-}
-.skel.short {
-  width: 80px;
-  margin-left: auto;
-}
+.skel.wide  { width: 140px; }
+.skel.short { width: 80px; margin-left: auto; }
 
 @keyframes shimmer {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
 
+/* --- SMOOTH FADE PRICE CHANGE (5 seconds) --- */
 .price-change-up {
   animation: fadeUp 5s ease-out;
 }
@@ -180,11 +159,11 @@ td.num {
 }
 
 @keyframes fadeUp {
-  0% { color: #22c55e; }
+  0%   { color: #22c55e; }
   100% { color: #fff; }
 }
 
 @keyframes fadeDown {
-  0% { color: #ef4444; }
+  0%   { color: #ef4444; }
   100% { color: #fff; }
 }
