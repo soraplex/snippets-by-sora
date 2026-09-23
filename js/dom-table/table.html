@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="table.css" />
+    <title>Corporate Personnel Ledger Canvas</title>
+  </head>
+  <body>
+    <!-- Clean semantic main grid wrapper -->
+    <main class="table-container">
+      <!-- Header region containing semantic title and subtitle description context -->
+      <header class="table-view-header">
+        <h2>Employee Directory</h2>
+        <p>Real-time corporate personnel index populated natively via decoupled data streams.</p>
+      </header>
+
+      <!-- Semantic section wrapper housing responsive tracking boundaries -->
+      <section class="table-responsive-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Username</th>
+              <th scope="col">Email Address</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Company Name</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody id="directory-table-body">
+            <tr>
+              <td colspan="6" class="table-status-cell">Assembling secure personnel registry matrix tracks...</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <!-- Script mounts here to execute procedural element tree construction loops -->
+    <script src="table.js"></script>
+  </body>
+</html>
