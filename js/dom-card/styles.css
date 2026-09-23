@@ -13,7 +13,7 @@ html,
 body {
   min-height: 100vh;
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden; /* prevent sideways scroll */
 }
 
 body {
@@ -152,4 +152,34 @@ body {
 
 .btn:active {
   transform: scale(0.98); /* Tactile press feedback mechanical simulation */
+}
+
+/* Fix background on iOS */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+}
+
+/* Medium screens */
+@media (max-width: 600px) {
+  .card-title {
+    font-size: 1.15rem;
+  }
+
+  .card-text {
+    font-size: 0.85rem;
+  }
+}
+
+/* Small mobile: force stacking + bigger tap targets */
+@media (max-width: 480px) {
+  .catalog-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .btn {
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+  }
 }
