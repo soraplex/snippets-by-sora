@@ -3,7 +3,7 @@ const API_URL = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ether
 const coinMeta = {
   bitcoin: { name: "Bitcoin", symbol: "BTC", color: "#f7931a", bg: "#2a1a05" },
   ethereum: { name: "Ethereum", symbol: "ETH", color: "#627eea", bg: "#0f1230" },
-  solana: { name: "Solana", symbol: "SOL", color: "#9945ff", bg: "#160a2a" },
+  solana: { name: "Solana", symbol: "SOL", color: "#9945ff", bg: "#160a2a" }
 };
 
 function formatPrice(value) {

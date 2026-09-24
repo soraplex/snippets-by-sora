@@ -5,6 +5,7 @@ const theme = {
       2: "#D2B48C",
       3: "#2384AAAD",
       4: "#7391c8",
+      5: "#a6aca6"
     },
     blue: {
       50: "#eef4fa",
