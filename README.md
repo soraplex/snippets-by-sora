@@ -1,12 +1,6 @@
 # ⚡️ Sora's Toolkit
 
-A personal reference of reusable code snippets, patterns, and mini-components.
-
-This repository works as a developer cheat sheet. Use it to:
-
-- Quickly find code I've already solved
-- Copy reliable snippets
-- Reuse them across projects
+A personal reference of reusable code snippets, patterns, and mini-components. This repository works as a developer cheat sheet: a place to quickly find, copy, and reuse code I've already solved.
 
 ## What's Inside
 
