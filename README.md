@@ -1,8 +1,12 @@
 # ⚡️ Sora's Toolkit
 
-A personal reference of reusable code snippets, patterns, and mini-components. This repository works as a developer cheat sheet: a place to quickly find, copy, and reuse code I've already solved.
+A personal reference of reusable code snippets, patterns, and mini-components.
 
-**Stack:** JavaScript · React · Chakra UI · HTML · CSS · Terminal
+This repository works as a developer cheat sheet. Use it to:
+
+- Quickly find code I've already solved
+- Copy reliable snippets
+- Reuse them across projects
 
 ## What's Inside
 
