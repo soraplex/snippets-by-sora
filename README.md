@@ -1,34 +1,20 @@
-# ⚡️ Sora’s Toolkit
+# ⚡️ Sora's Toolkit
 
-A curated collection of reusable code snippets, patterns, and mini‑components that I use as a personal reference. This repository acts as a developer cheat sheet — a place to quickly find, copy, and reuse code across projects.
+A personal reference of reusable code snippets, patterns, and mini-components. This repository works as a developer cheat sheet: a place to quickly find, copy, and reuse code I've already solved.
 
-- find code I’ve already solved
+**Stack:** JavaScript · React · Chakra UI · HTML · CSS · Terminal
 
-- copy/paste reliable snippets
+## What's Inside
 
-- revisit patterns I use often
+| Category               | Contents                                                                 |
+| ---------------------- | ------------------------------------------------------------------------ |
+| **JavaScript**         | Language fundamentals, built-in methods, DOM rendering, and API patterns |
+| **Vanilla**            | HTML and CSS snippets, with JavaScript where needed                      |
+| **React**              | Reusable React components and patterns                                   |
+| **Terminal**           | Command-line commands and setup workflows                                |
+| **Portfolio Template** | A reusable starting point for a portfolio site                           |
+| **Theme**              | A reusable color palette and theme styling                               |
 
-- keep explanations so I don’t forget why something works
+## Ongoing
 
-# 📁 What’s Inside
-- JavaScript utilities — helpers, patterns, functions
-
-- React components — buttons, cards, UI building blocks
-
-- Semantic HTML examples — clean, accessible markup
-
-- CSS/UI snippets — small reusable styling patterns
-
-- Markdown explanations — notes, variations, and best practices
-
-# 🎯 Purpose
-Each snippet is designed to be:
-
-- easy to copy
-
-- easy to understand
-
-- easy to reuse
-
-# 🚀 Ongoing
-This toolkit will continue to grow as I learn, refine, and collect useful code.
+This toolkit grows as I learn, refine, and collect useful code.
