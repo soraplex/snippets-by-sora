@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.5;
+}
+
+table {
+  display: table;
+  border-spacing: 2px;
+  border-collapse: separate;
+  box-sizing: border-box;
+  text-indent: 0;
+  text-align: left;
+  border-collapse: collapse;
+  --color: #b2cbe2;
+  /* --color: #d0d0f5; */
+  caption-side: bottom;
+  font-family: "Lato", sans-serif;
+}
+
+thead {
+  border-block-end: 2px solid;
+  background: whitesmoke;
+}
+
+tfoot {
+  border-block: 2px solid;
+  background: whitesmoke;
+}
+
+tr {
+  border-bottom: 1px solid;
+}
+
+th,
+td {
+  border: 1px solid #000;
+  padding: 0.25rem 0.75rem;
+}
+
+th,
+caption {
+  text-align: start;
+}
+
+thead th:not(:first-child),
+td {
+  text-align: end;
+}
+
+thead,
+tfoot {
+  background: var(--color);
+  /* border-top: 2px solid #000;
+  border-bottom: 2px solid #000; */
+}
+
+tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--color), transparent 60%);
+}
